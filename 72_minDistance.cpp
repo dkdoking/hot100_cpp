@@ -6,8 +6,8 @@ using namespace std;
 class Solution {
 public:
     int minDistance(string word1, string word2) {
-        int word1_len = word1.size();
-        int word2_len = word2.size();
+         int word1_len = word1.size();
+         int word2_len = word2.size();
         if (word1_len==0&&word2_len==0) return 0;
         if (word1_len==0) return word2_len;
         if (word2_len==0) return word1_len;
