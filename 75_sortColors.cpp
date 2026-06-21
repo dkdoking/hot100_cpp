@@ -35,6 +35,53 @@ public:
             }
         }
     }
+
+    /**
+     * 如果nums里面有0，1，2，3该怎么排序？参考chatgpt
+     * @param nums 数组
+     */
+    void sortFourColors2(vector<int>& nums) {
+        int n = nums.size();
+        if (n < 2) {
+            return;
+        }
+
+        // [0 ... p0)      全是 0
+        // [p0 ... p1)     全是 1
+        // [p1 ... i)      全是 2
+        // [i ... p3)      未处理
+        // [p3 ... n - 1]  全是 3
+
+        int p0 = 0;
+        int p1 = 0;
+        int i = 0;
+        int p3 = n;
+
+        while (i < p3) {
+            if (nums[i] == 0) {
+                swap(nums, i, p0);
+
+                // 如果已经有 1 区，刚才换出来的 1 需要放到 p1 位置
+                if (p0 < p1) {
+                    swap(nums, i, p1);
+                }
+
+                p0++;
+                p1++;
+                i++;
+            } else if (nums[i] == 1) {
+                swap(nums, i, p1);
+                p1++;
+                i++;
+            } else if (nums[i] == 2) {
+                i++;
+            } else {
+                p3--;
+                swap(nums, i, p3);
+            }
+        }
+    }
+
 private:
     void swap(vector<int> & nums,int i,int j) {
         int temp = nums[i];
