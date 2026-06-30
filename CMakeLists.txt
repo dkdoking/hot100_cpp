@@ -6,4 +6,6 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 add_executable(zt_0614_formatStr zt_0614_formatStr.cpp
         139_wordBreak.cpp)
-add_executable(wordBreak 139_wordBreak.cpp)
+add_executable(wordBreak 139_wordBreak.cpp
+        3.cpp
+        48.cpp)
