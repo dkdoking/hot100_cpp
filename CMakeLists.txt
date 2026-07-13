@@ -8,4 +8,6 @@ add_executable(zt_0614_formatStr zt_0614_formatStr.cpp
         139_wordBreak.cpp)
 add_executable(wordBreak 139_wordBreak.cpp
         3.cpp
-        48.cpp)
+        48.cpp
+        207.cpp
+        208.cpp)
